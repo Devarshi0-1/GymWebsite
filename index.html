@@ -6,11 +6,215 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Runner's Gym</title>
-    <link rel="stylesheet" href="/Web Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Roboto:ital,wght@0,400;1,100&family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel = "icon" href = "/icons/titleBarIcon.png" type = "image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Roboto:ital,wght@0,400;1,100&family=Ubuntu&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="titleBarIcon.png" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-collapse: collapse;
+            font-family: 'BIZ UDGothic', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        :root {
+            --varHeight: 0.10718;
+            --varWidth: 0.05208;
+        }
+
+        .rd-bd {
+            border: 1px solid red;
+        }
+
+        .disp-grid {
+            display: grid;
+        }
+
+        .bdr-15 {
+            border-radius: 15px;
+        }
+
+        .gridContainer {
+            grid-template-rows: 1fr 9fr;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .navigationBar {
+            height: 100%;
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 0 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.557);
+        }
+
+        .leftNav {
+            position: relative;
+        }
+
+        .titleIcon {
+            width: 4.166vw;
+            margin: 0.5359vh 0.26041vw;
+            height: 88%;
+            cursor: pointer;
+            position: absolute;
+            border-radius: 50%;
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(30, 29, 30);
+            background-image: url('titleLogo.png');
+            transition: 500ms;
+        }
+
+        .titleIcon:hover {
+            width: 4.6875vw;
+            height: 100%;
+        }
+
+        .midNav {
+            height: 100%;
+            column-gap: 1.04166vw;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .iconContainers,
+        .textContainers {
+            cursor: pointer;
+            font-size: 1.562vw;
+            text-align: center;
+            background-size: 18%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .iconContainers:hover,
+        .iconContainers:focus {
+            background-size: 25%;
+        }
+
+        #iconContainer1 {
+            background-image: url('live.png');
+        }
+
+        #iconContainer2 {
+            background-image: url('membership.png');
+        }
+
+        #iconContainer3 {
+            background-image: url('plans.png');
+        }
+
+        #iconContainer4 {
+            background-image: url('more.png');
+        }
+
+        .rightNav {
+            grid-template-columns: 5fr 1fr;
+        }
+
+        .loginIcon {
+            cursor: pointer;
+            background-size: 20%;
+            background-position: right;
+            background-repeat: no-repeat;
+            background-image: url('login.png');
+            transition: background-size 100ms;
+            width: 50%;
+            justify-self: right;
+        }
+
+        .loginIcon:hover {
+            background-size: 30%;
+        }
+
+        .loginText {
+            font-size: 1.04166vw;
+            place-self: center;
+            cursor: pointer;
+        }
+
+        .mainContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .mainContainer {
+            width: 90vw;
+            height: 60vh;
+            grid-template-rows: 1fr 5fr;
+        }
+
+        .mainHeading {
+            margin: 0.10718vh 0.5208vw;
+            font-size: 2.6041vw;
+            align-self: center;
+        }
+
+        .mainImagesContainer {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .mainImages {
+            flex-grow: 1;
+            background-size: cover;
+            background-position: center;
+            transition: flex-grow 500ms;
+            background-repeat: no-repeat;
+            min-width: 300px;
+        }
+
+
+        .imageHeading {
+            height: 10%;
+            margin: calc(var(--varHeight) * 30vh) 1.5625vw;
+            color: white;
+            font-size: 25px;
+            font-size: calc(var(--varWidth) * 25vw);
+            grid-template-columns: 5fr 1fr;
+        }
+
+        .arrowIcon {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('arrowRight.png');
+        }
+
+        #mainImage1:hover,
+        #mainImage2:hover,
+        #mainImage3:hover,
+        #mainImage1:focus,
+        #mainImage2:focus,
+        #mainImage3:focus {
+            flex-grow: 3;
+            cursor: pointer;
+        }
+
+        #mainImage1 {
+            background-image: url('mainImage1.jpg');
+            border-radius: 15px 0 0 15px;
+        }
+
+        #mainImage2 {
+            background-image: url('mainImage2.jpg');
+        }
+
+        #mainImage3 {
+            border-radius: 0 15px 15px 0;
+            background-image: url('mainImage3.jpg');
+        }
+    </style>
 </head>
 
 <body>
@@ -41,20 +245,52 @@
 
                 <div class="mainImagesContainer disp-grid bdr-15">
                     <div class="mainImages" id="mainImage1">
-                        <div class="imageHeading disp-grid">STRENGTH <div class="addArrow "></div></div>
+                        <div class="imageHeading disp-grid">STRENGTH <div class="addArrow "></div>
+                        </div>
                     </div>
                     <div class="mainImages" id="mainImage2">
-                        <div class="imageHeading disp-grid">MOBILITY <div class="addArrow "></div></div>
+                        <div class="imageHeading disp-grid">MOBILITY <div class="addArrow "></div>
+                        </div>
                     </div>
                     <div class="mainImages" id="mainImage3">
-                        <div class="imageHeading disp-grid">DRILLS <div class="addArrow "></div></div>
+                        <div class="imageHeading disp-grid">DRILLS <div class="addArrow "></div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-    <script src="/Web Files/script.js"></script>
+    <script>
+        let mainImages = document.getElementsByClassName('mainImages')
+        let addArrow = document.getElementsByClassName('addArrow')
+
+        mainImages[0].addEventListener('mouseover', () => {
+            addArrow[0].classList.add('arrowIcon')
+        })
+
+        mainImages[1].addEventListener('mouseover', () => {
+            addArrow[1].classList.add('arrowIcon')
+        })
+
+        mainImages[2].addEventListener('mouseover', () => {
+            addArrow[2].classList.add('arrowIcon')
+        })
+
+        mainImages[0].addEventListener('mouseout', () => {
+            addArrow[0].classList.remove('arrowIcon')
+        })
+
+        mainImages[1].addEventListener('mouseout', () => {
+            addArrow[1].classList.remove('arrowIcon')
+        })
+
+        mainImages[2].addEventListener('mouseout', () => {
+            addArrow[2].classList.remove('arrowIcon')
+        })
+
+
+    </script>
 </body>
 
 </html>
