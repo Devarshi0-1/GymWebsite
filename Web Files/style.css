@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-family: 'BIZ UDGothic', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root{
+    --varHeight: 0.10718;
+    --varWidth: 0.05208;
+}
+
+.rd-bd{
+    border: 1px solid red;
+}
+
+.disp-grid{
+    display: grid;
+}
+
+.bdr-15{
+    border-radius: 15px;
+}
+
+.gridContainer {
+    grid-template-rows: 1fr 9fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+.navigationBar {
+    height: 100%;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 0 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.557);
+}
+
+.leftNav{
+    position: relative;
+}
+
+.titleIcon {
+    width: 4.166vw;
+    margin: 0.5359vh 0.26041vw;
+    height: 88%;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(30, 29, 30);
+    background-image: url('/icons/titleLogo.png');
+    transition: 500ms;
+}
+
+.titleIcon:hover{
+    width: 4.6875vw;
+    height: 100%;
+}
+
+.midNav {
+    height: 100%;
+    column-gap: 1.04166vw;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.iconContainers,
+.textContainers {
+    cursor: pointer;
+    font-size: 1.562vw;
+    text-align: center;
+    background-size: 18%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.iconContainers:hover,
+.iconContainers:focus{
+    background-size: 25%;
+}
+
+#iconContainer1 {
+    background-image: url('/icons/live.png');
+}
+
+#iconContainer2 {
+    background-image: url('/icons/membership.png');
+}
+
+#iconContainer3 {
+    background-image: url('/icons/plans.png');
+}
+
+#iconContainer4 {
+    background-image: url('/icons/more.png');
+}
+
+.rightNav {
+    grid-template-columns: 5fr 1fr;
+}
+
+.loginIcon {
+    cursor: pointer;
+    background-size: 20%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url('/icons/login.png');
+    transition: background-size 100ms;
+    width: 50%;
+    justify-self: right;
+}
+
+.loginIcon:hover{
+    background-size: 30%;
+}
+
+.loginText {
+    font-size: 1.04166vw;
+    place-self: center;
+    cursor: pointer;
+}
+
+.mainContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.mainContainer {
+    width: 90vw;
+    height: 60vh;
+    grid-template-rows: 1fr 5fr;
+}
+
+.mainHeading {
+    margin: 0.10718vh 0.5208vw;
+    font-size: 2.6041vw;
+    align-self: center;
+}
+
+.mainImagesContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainImages {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    transition: flex-grow 500ms;
+    background-repeat: no-repeat;
+    min-width: 300px;
+}
+
+
+.imageHeading {
+    height: 10%;
+    margin: calc(var(--varHeight) * 30vh) 1.5625vw;
+    color: white;
+    font-size: 25px;
+    font-size: calc(var(--varWidth) * 25vw);
+    grid-template-columns: 5fr 1fr;
+}
+
+.arrowIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/icons/arrowRight.png');
+}
+
+#mainImage1:hover,
+#mainImage2:hover,
+#mainImage3:hover,
+#mainImage1:focus,
+#mainImage2:focus,
+#mainImage3:focus {
+    flex-grow: 3;
+    cursor: pointer;
+}
+
+#mainImage1 {
+    background-image: url('/images/mainImage1.jpg');
+    border-radius: 15px 0 0 15px;
+}
+
+#mainImage2 {
+    background-image: url('/images/mainImage2.jpg');
+}
+
+#mainImage3 {
+    border-radius: 0 15px 15px 0;
+    background-image: url('/images/mainImage3.jpg');
+}
+
